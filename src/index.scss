@@ -370,11 +370,6 @@ section {
   }
 }
 
-button svg {
-  height: 100%;
-  width: auto;
-}
-
 button.cell-number {
   color: white;
 }
@@ -383,12 +378,22 @@ button.cell-bomb {
   background-color: #c333;
   cursor: not-allowed;
   // color: #f00;
+
+  &.cell-bomb svg {
+    height: inherit;
+    width: auto;
+  }
 }
 
 button.cell-flag {
   background-color: #c8d8e4;
   cursor: not-allowed;
   // color: green;
+
+  &.cell-flag svg {
+    height: inherit;
+    width: auto;
+  }
 }
 
 button.cell-free {
