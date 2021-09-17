@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import useSound from 'use-sound'
 // import monk from './icons/footer/favicon.svg'
+import mainSound from './mp3s/minesweeper.mp3'
 
 type GameDifficulty = 0 | 1 | 2
 
@@ -43,6 +45,12 @@ export function App() {
     loadExistingGame()
   }, [])
 
+  const gameSound = mainSound
+
+  const startSound = () => {
+    const [play] = useSound(gameSound)
+  }
+
   async function newGame(newGameDifficulty: 0 | 1 | 2) {
     const gameOptions = { difficulty: newGameDifficulty }
 
@@ -67,6 +75,7 @@ export function App() {
       localStorage.setItem('game-id', newGameStateJson.id)
       localStorage.setItem('game-difficulty', String(newGameDifficulty))
     }
+    play()
   }
 
   async function handleCheckOrFlagCell(
@@ -100,32 +109,37 @@ export function App() {
     if (value === 'F') {
       // return an icon for a flag
       return (
-        <svg
-          version="1.1"
-          id="Layer_1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          viewBox="0 0 512.004 512.004"
-          fill="enable-background:new 0 0 512.004 512.004;"
-          xmlSpace="preserve"
-        >
-          <path
-            fill="#E64C3C"
-            d="M365.452,308.98c-35.723,0.724-70.246-12.958-95.774-37.957c-22.209-21.6-52.177-33.375-83.152-32.66
+        <>
+          <audio className="flagging" src="audio">
+            <track kind="captions"> </track>
+            <svg
+              version="1.1"
+              id="Flag"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlnsXlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 512.004 512.004"
+              fill="enable-background:new 0 0 512.004 512.004;"
+              xmlSpace="preserve"
+            >
+              <path
+                fill="#E64C3C"
+                d="M365.452,308.98c-35.723,0.724-70.246-12.958-95.774-37.957c-22.209-21.6-52.177-33.375-83.152-32.66
 	c-26.075-0.344-51.559,7.839-72.559,23.304c-2.675,2.092-5.958,3.24-9.357,3.266c-4.546-0.035-8.854-2.03-11.828-5.473
 	c-2.957-3.398-4.555-7.768-4.502-12.27V48.314c0-4.864,1.942-9.533,5.385-12.976c25.316-23.18,58.542-35.812,92.861-35.309
 	c35.785-0.759,70.37,12.914,95.951,37.957c22.156,21.574,52.054,33.34,82.975,32.66c21.265,0.194,42.22-5.129,60.819-15.447
 	c2.322-1.395,4.97-2.154,7.68-2.207c9.339,0.433,16.595,8.306,16.242,17.654v200.817c0.168,5.967-2.692,11.608-7.591,15.006
 	C419.686,301.468,392.834,309.306,365.452,308.98z"
-          />
-          <path
-            fill="#CBB292"
-            d="M79.453,0.03L79.453,0.03c9.754,0,17.654,7.9,17.654,17.654v476.665
+              />
+              <path
+                fill="#CBB292"
+                d="M79.453,0.03L79.453,0.03c9.754,0,17.654,7.9,17.654,17.654v476.665
 	c0,9.754-7.9,17.654-17.654,17.654l0,0c-9.754,0-17.654-7.9-17.654-17.654V17.684C61.799,7.939,69.699,0.03,79.453,0.03z"
-          />
-        </svg>
+              />
+            </svg>
+          </audio>
+        </>
       )
     }
 
@@ -219,6 +233,9 @@ export function App() {
 
   return (
     <div>
+      <audio autoPlay src={mainSound}>
+        <track kind="captions"></track>
+      </audio>
       <main>
         <h1>Mine Sweeper</h1>
         <h2>

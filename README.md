@@ -8,4 +8,6 @@ The goal of this assignment was to recreate the classic game of minesweeper simi
 
 A link to the webpage that I made can be found in the About section of this repository or below.
 
+```html
 https://minesweeper-dommitchell.netlify.app/
+```

@@ -122,6 +122,7 @@ section {
     & button {
       width: var(--expert-cell-size);
       height: var(--expert-cell-size);
+      // cursor: pointer;
 
       &.cell-number {
         font-weight: bold;
@@ -140,11 +141,15 @@ section {
     justify-content: center;
     color: white;
     font-family: 'Courier New', Courier, monospace;
-    // cursor: pointer;
+    cursor: grab;
   }
 
   & button:hover {
     background-color: transparent;
+  }
+
+  & button:active {
+    cursor: grabbing;
   }
 }
 
@@ -152,18 +157,26 @@ button.cell-number {
   color: white;
 }
 
+button svg {
+  height: 100%;
+  width: auto;
+}
+
 button.cell-bomb {
   background-color: #c333;
+  cursor: not-allowed;
   // color: #f00;
 }
 
 button.cell-flag {
   background-color: #c8d8e4;
+  cursor: not-allowed;
   // color: green;
 }
 
 button.cell-free {
   background-color: #b6b6b6;
+  cursor: not-allowed;
 }
 
 @for $i from 1 through 8 {
