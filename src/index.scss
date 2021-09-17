@@ -69,6 +69,223 @@ main {
   justify-content: center;
 }
 
+h2 {
+  display: flex;
+}
+
+.easy {
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  white-space: nowrap;
+  display: flex;
+
+  &.easy p {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  &:hover p {
+    color: white;
+    letter-spacing: normal;
+  }
+
+  &.easy span {
+    transform: translateX(-200px) translateY(-10px);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background: green;
+  }
+
+  &.easy:hover span {
+    transform: translateY(-10px);
+    border-radius: 50px;
+  }
+
+  &.easy div {
+    display: none;
+    height: 30px;
+  }
+
+  &.easy svg {
+    height: 30px;
+    width: auto;
+  }
+
+  &.easy:hover div {
+    display: block;
+    border: 3px solid black;
+    z-index: 2;
+    border-radius: 50px;
+  }
+}
+
+.easy-span {
+  cursor: pointer;
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  z-index: 1;
+  left: 0;
+  transition: 0.2s linear;
+}
+
+.intermediate {
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  white-space: nowrap;
+  display: flex;
+
+  &.intermediate p {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  &:hover p {
+    color: white;
+    letter-spacing: normal;
+  }
+
+  &.intermediate span {
+    transform: translateY(60px);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background: orange;
+  }
+
+  &.intermediate:hover span {
+    transform: translateY(-10px);
+    border-radius: 50px;
+  }
+
+  &.intermediate div {
+    display: none;
+    height: 30px;
+  }
+
+  &.intermediate svg {
+    height: 30px;
+    width: auto;
+  }
+
+  &.intermediate:hover div {
+    display: block;
+    border: 3px solid black;
+    z-index: 2;
+    border-radius: 50px;
+  }
+}
+
+.intermediate-span {
+  cursor: pointer;
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  z-index: 1;
+  left: 0;
+  transition: 0.2s linear;
+}
+
+.expert {
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  white-space: nowrap;
+  display: flex;
+
+  &.expert p {
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  &:hover p {
+    color: white;
+    letter-spacing: normal;
+  }
+
+  &.expert span {
+    transform: translateY(-115px);
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    background: red;
+  }
+
+  &.expert:hover span {
+    transform: translateY(-10px);
+    border-radius: 50px;
+  }
+
+  &.expert div {
+    display: none;
+    height: 30px;
+  }
+
+  &.expert svg {
+    height: 30px;
+    width: auto;
+  }
+
+  &.expert:hover div {
+    display: block;
+    border: 3px solid black;
+    z-index: 2;
+    border-radius: 50px;
+  }
+}
+
+.expert-span {
+  cursor: pointer;
+  position: absolute;
+  width: 170px;
+  height: 60px;
+  z-index: 1;
+  left: 0;
+  transition: 0.2s linear;
+}
+
 section {
   list-style: none;
   margin: 0;
@@ -153,13 +370,13 @@ section {
   }
 }
 
-button.cell-number {
-  color: white;
-}
-
 button svg {
   height: 100%;
   width: auto;
+}
+
+button.cell-number {
+  color: white;
 }
 
 button.cell-bomb {
